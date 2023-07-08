@@ -1,6 +1,6 @@
 # E-Churn_Retention
 
-![Project Image](project_image.png) <!-- Replace with an image representing your project -->
+![Project Image](E-Churn_Retention.png) <!-- Replace with an image representing your project -->
 
 > A data science project aimed at developing a customer churn prediction model and implementing effective retention strategies for B2B businesses.
 
@@ -26,7 +26,7 @@ This repository contains the source code, dataset information, and relevant reso
 - Evaluation of churn reduction and customer satisfaction improvement
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/your-username/customer-churn-prediction.git`
+1. Clone the repository: `https://github.com/Santosasantos/E-Churn_Retention.git`
 2. Run the html file
 
 ## Usage
