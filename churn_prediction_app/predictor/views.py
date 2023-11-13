@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from .forms import PredictionForm
 import joblib
 import pandas as pd 
@@ -21,6 +22,7 @@ def predict_churn(age, gender, tenure, support_calls, payment_delay, subscriptio
     return prediction[0]
 
 def home(request):
+    return HttpResponse("<h1>It's worked</h1>")
     if request.method == 'POST':
         form = PredictionForm(request.POST)
         if form.is_valid():
