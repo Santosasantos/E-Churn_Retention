@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Prediction App</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<!-- <body>
+    <h1>Churn Prediction</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.Age.label_tag }}
+            {{ form.Age }}
+        </div>
+        <div class="form-group">
+            {{ form.Gender.label_tag }}
+            {{ form.Gender }}
+        </div>
+        <button type="submit">Predict</button> 
+    </form>
+</body> -->
+<body class="bg-gray-100">
+    <div class="flex justify-center items-center h-screen">
+        <div class="bg-white shadow-md rounded p-8 max-w-lg w-full">
+            <h1 class="text-2xl font-bold mb-4 text-center">Churn Prediction</h1>
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="Age">Age</label>
+                    <input class="w-full border border-gray-300 rounded p-2" type="number" id="Age" name="Age">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="Gender">Gender</label>
+                    <select class="w-full border border-gray-300 rounded p-2" id="Gender" name="Gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="Tenure">Tenure</label>
+                    <input class="w-full border border-gray-300 rounded p-2" type="number" id="Tenure" name="Tenure">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="Support_Calls">Support Calls</label>
+                    <input class="w-full border border-gray-300 rounded p-2" type="number" id="Support_Calls" name="Support_Calls">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="Payment_Delay">Payment Delay</label>
+                    <input class="w-full border border-gray-300 rounded p-2" type="number" id="Payment_Delay" name="Payment_Delay">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="Subscription_Type">Subscription Type</label>
+                    <select class="w-full border border-gray-300 rounded p-2" id="Subscription_Type" name="Subscription_Type">
+                        <option value="basic">Basic</option>
+                        <option value="premium">Premium</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="Contract_Length">Contract Length</label>
+                    <select class="w-full border border-gray-300 rounded p-2" id="Contract_Length" name="Contract_Length">
+                        <option value="monthly">Monthly</option>
+                        <option value="annually">Annually</option>
+                        <option value="quarterly">Quarterly</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
+                    Predict
+                </button>
+            </form>
+
+            {% if prediction %}
+                <h2 class="mt-4 font-semibold text-lg text-green-600">Prediction Result: {{ prediction }}</h2>
+            {% endif %}
+            
+        </div>
+    </div>
+</body>
+</html>
